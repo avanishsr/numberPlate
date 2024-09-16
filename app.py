@@ -13,7 +13,7 @@ from PIL import Image
 app = Flask(__name__)
 
 # Load YOLOv8 model (ensure the best.pt is in the same folder as this script)
-model = YOLO("best.pt")
+model = YOLO("weights/best.pt")
 
 # Create EasyOCR reader (for OCR)
 reader = easyocr.Reader(['en'])
@@ -126,5 +126,6 @@ def detect_best_plate_from_video():
         return jsonify({'error': 'No license plate detected'})
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Default to port 5000 for local development
+    app.run(host="0.0.0.0", port=port)
