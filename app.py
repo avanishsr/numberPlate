@@ -13,7 +13,8 @@ from PIL import Image
 app = Flask(__name__)
 
 # Load YOLOv8 model (ensure the best.pt is in the same folder as this script)
-model = YOLO("best.pt")
+model = YOLO(os.path.join(os.path.dirname(__file__), "best.pt"))
+
 
 # Create EasyOCR reader (for OCR)
 reader = easyocr.Reader(['en'])
