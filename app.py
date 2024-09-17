@@ -16,7 +16,8 @@ app = Flask(__name__)
 model = YOLO("best.pt")
 
 # Create EasyOCR reader (for OCR)
-reader = easyocr.Reader(['en'])
+reader = easyocr.Reader(['en'], model_storage_directory='.EasyOCR/model')
+
 
 # Ensure the output folder exists
 if not os.path.exists("static/output"):
