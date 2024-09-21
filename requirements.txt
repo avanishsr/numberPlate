@@ -34,6 +34,7 @@ packaging==24.1
 pandas==2.0.3
 pillow==10.4.0
 psutil==6.0.0
+pytesseract
 py-cpuinfo==9.0.0
 pyclipper==1.3.0.post5
 pyparsing==3.1.4
